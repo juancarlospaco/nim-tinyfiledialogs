@@ -47,7 +47,7 @@ proc tinyfd_saveFileDialog*(aTitle: cstring, aDefaultPathAndFile: cstring, aNumO
 proc tinyfd_selectFolderDialog*(aTitle: cstring, aDefaultPath: cstring): cstring {.importc.}
 
 
-when isMainModule:
+runnableExamples:
   tinyfd_beep()
   echo tinyfd_notifyPopup("Title", "aMessage", "yesnocancel", "info", 1)
   echo tinyfd_messageBox("Title", "aMessage", "yesnocancel", "info", 1)
