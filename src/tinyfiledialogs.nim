@@ -19,6 +19,7 @@
 ## - Save file Dialog.
 ## - Open file Dialog.
 ## - Select folder Dialog.
+## - Color picker.
 ##
 ## API
 ## ---
@@ -46,6 +47,8 @@ proc tinyfd_saveFileDialog*(aTitle: cstring, aDefaultPathAndFile: cstring, aNumO
 
 proc tinyfd_selectFolderDialog*(aTitle: cstring, aDefaultPath: cstring): cstring {.importc.}
 
+proc tinyfd_colorChooser*(aTitle: cstring, aDefaultHexRGB: cstring; aDefaultRGB: array[3, uint8]): cstring {.importc.}
+
 
 runnableExamples:
   tinyfd_beep()
@@ -56,3 +59,4 @@ runnableExamples:
   echo tinyfd_openFileDialog("You can Open Files with this", "")
   echo tinyfd_saveFileDialog("You can Save Files with this", "")
   echo tinyfd_selectFolderDialog("You can Open Folders with this", "")
+  echo tinyfd_colorChooser("Color Picker", "#FF0000", [0.uint8 , 128 , 255])
